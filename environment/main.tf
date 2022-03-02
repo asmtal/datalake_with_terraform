@@ -33,6 +33,7 @@ module "resource_glue_a" {
   source                 = "../modules/glue-a"
   env                    = var.env
   kms_key                = module.resource_s3_bucket.kms_key
+  jdbc_user              = module.resource_aws_secret_manager.jdbc_user
   jdbc_pass              = module.resource_aws_secret_manager.jdbc_pass
   glue_role              = module.resource_iam_policies.glue_role
   glue_role_id           = module.resource_iam_policies.glue_role_id
